@@ -41,4 +41,14 @@ class NewMessage
             new PrivateChannel('channel-name'),
         ];*/
     }
+
+    /**
+     * Get the channels the event should broadcast on.
+     *
+     * @return array, \Illuminate\Broadcasting>
+     */
+    public function broadcastWith()
+{
+    return ['message' => $this->message];
+}
 }

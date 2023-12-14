@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-Time Messaging</title>
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-    @vite('resources/js/app.js')
-</head>
-<body>
-    <div id="app">
-        <chat></chat>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <main class="py-4">
+                    <div id="app">
+                        <chat></chat>
+                    </div>
+                </main>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>
+@endsection
+

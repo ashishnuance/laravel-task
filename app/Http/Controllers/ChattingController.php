@@ -20,9 +20,10 @@ class ChattingController extends Controller
 
     public function send(Request $request)
     {   
-        $sender_id = $request->user();
-        $sender_id = $request->user();
-        dd($request->user());
+        $requestData['sender_id'] = $request->user()->id;
+        $requestData['receiver_id'] = 12;
+        $requestData['message_text'] = $request->message;
+        Messages::create($requestData);
         $message = $request->input('message');
 
         event(new NewMessage($message));

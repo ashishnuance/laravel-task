@@ -23,7 +23,8 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::controller(ChattingController::class)->group(function () {
+Route::controller(ChattingController::class)->middleware('auth')->group(function () {
+
     Route::get('/messages', 'index')->name('messages');
     Route::post('/send-message', 'send')->name('send-message');
 });
