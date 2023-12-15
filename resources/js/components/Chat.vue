@@ -31,20 +31,21 @@
             };
         },
         mounted() {
-            window.Echo = new Echo({
-                broadcaster: 'pusher',
-                key: '5c875ee5042b7ca5673e',
-                cluster: 'ap2',
-                // Other options...
-            });
+            // window.Echo = new Echo({
+            //     broadcaster: 'pusher',
+            //     key: '5c875ee5042b7ca5673e',
+            //     cluster: 'ap2',
+            //     // Other options...
+            // });
             // window.Echo.channel('notifications').listen('NewNotification', (data) => {
             //     this.notifications.push(data.message);
             // });
-
-            window.Echo.channel('chat').listen('NewMessage', (data) => {
-                console.log('data',data);
+            console.log('data');
+            window.Echo.channel('chat').listen('NewMessage', function(data) {
+                console.log('data', data);
                 this.messages.push(data.message);
-            });
+            }.bind(this));
+
             /*window.Echo.channel('chat')
                 .listen('NewMessage', (event) => {
                     this.messages.push(event.message);
