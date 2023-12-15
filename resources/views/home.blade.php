@@ -15,7 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    <a href="{{ route('messages') }}">{{ __('Messages') }}</a>
+                    <a href="{{ route('chat') }}">{{ __('Messages') }}</a>
                 </div>
             </div>
         </div>

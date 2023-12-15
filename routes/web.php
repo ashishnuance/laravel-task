@@ -25,6 +25,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::controller(ChattingController::class)->middleware('auth')->group(function () {
 
-    Route::get('/messages', 'index')->name('messages');
-    Route::post('/send-message', 'send')->name('send-message');
+    Route::get('/chat', 'index')->name('chat');
+    Route::get('/messages', 'fetchMessages')->name('messages');
+    Route::post('/send-message', 'sendMessage')->name('send-message');
+    Route::get('/user-list', 'fetchUsers')->name('user-list');
 });
